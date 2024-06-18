@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  docker-demo-web-api:
+    container_name: docker-demo-web-api-container
+    build:
+      context: ./miniapp1
+      dockerfile: Dockerfile
+    environment:
+      - MSSQL_SA_PASSWORD=Password@2024
+    ports:
+      - "80:8080"
+    depends_on:
+      - docker-demo-sqlserver    
+  docker-demo-sqlserver:
+    container_name: docker-demo-sqlserver-container
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password@2024
+    ports:
+      - "1435:1433" 
