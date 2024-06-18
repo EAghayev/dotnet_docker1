@@ -4,7 +4,7 @@ services:
   docker-demo-web-api:
     container_name: docker-demo-web-api-container
     build:
-      context: ./miniapp1
+      context: ./miniapp1/miniapp1
       dockerfile: Dockerfile
     environment:
       - MSSQL_SA_PASSWORD=Password@2024
