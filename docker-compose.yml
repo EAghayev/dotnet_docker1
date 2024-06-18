@@ -7,7 +7,7 @@ services:
     environment:
       - MSSQL_SA_PASSWORD=Password@2024
     ports:
-      - "5000:8080"
+      - "80:8080"
     depends_on:
       - docker-demo-sqlserver    
   docker-demo-sqlserver:
